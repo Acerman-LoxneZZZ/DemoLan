@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T14:16:31.003Z",
+  "title": "Design System: ПРОЯВЛЕНО",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "canonical": "#08090d",
+        "role": "neutral",
+        "displayName": "Чёрная сцена"
+      },
+      "paper-light": {
+        "canonical": "#101218",
+        "role": "neutral",
+        "displayName": "Графитовый слой"
+      },
+      "ink": {
+        "canonical": "#f6f5fa",
+        "role": "neutral",
+        "displayName": "Светлый набор"
+      },
+      "muted": {
+        "canonical": "#b4b4c8",
+        "role": "neutral",
+        "displayName": "Приглушённый набор"
+      },
+      "accent": {
+        "canonical": "#bca4ff",
+        "role": "primary",
+        "displayName": "Лаймовый сигнал"
+      },
+      "accent-text": {
+        "canonical": "#d1beff",
+        "role": "primary",
+        "displayName": "Светлый фиолетовый"
+      },
+      "coral": {
+        "canonical": "#9861ff",
+        "role": "primary",
+        "displayName": "Электрический фиолетовый"
+      },
+      "lime": {
+        "canonical": "#bca4ff",
+        "role": "primary",
+        "displayName": "Лаймовое действие"
+      },
+      "line": {
+        "canonical": "#2a2c36",
+        "role": "neutral",
+        "displayName": "Разделитель"
+      },
+      "body-detail": {
+        "canonical": "#c5c2d3",
+        "role": "neutral",
+        "displayName": "Детальный светлый текст"
+      },
+      "gallery-ground": {
+        "canonical": "#100d18",
+        "role": "neutral",
+        "displayName": "Основание галереи"
+      },
+      "contact-ground": {
+        "canonical": "#181021",
+        "role": "neutral",
+        "displayName": "Основание обращения"
+      },
+      "process-ground": {
+        "canonical": "#121019",
+        "role": "neutral",
+        "displayName": "Основание процесса"
+      },
+      "process-sheet": {
+        "canonical": "#f2f3f8",
+        "role": "neutral",
+        "displayName": "Светлый лист процесса"
+      },
+      "field-line": {
+        "canonical": "#78628c",
+        "role": "neutral",
+        "displayName": "Линия поля"
+      },
+      "field-placeholder": {
+        "canonical": "#bcb0c9",
+        "role": "neutral",
+        "displayName": "Подсказка поля"
+      },
+      "error": {
+        "canonical": "#ffb9b9",
+        "role": "secondary",
+        "displayName": "Ошибка на тёмном"
+      },
+      "control-text": {
+        "canonical": "#171b0c",
+        "role": "neutral",
+        "displayName": "Текст светлой кнопки"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Manrope display",
+        "purpose": "Manrope650, прежняя responsive vw/svh рампа V5; более спокойная и компактная кириллица."
+      },
+      "headline": {
+        "displayName": "Manrope headline",
+        "purpose": "Manrope600, сохранённая адаптивная рампа."
+      },
+      "title": {
+        "displayName": "Пункт",
+        "purpose": "Названия тезисов, этапов и содержательных блоков."
+      },
+      "body": {
+        "displayName": "Основной текст",
+        "purpose": "Manrope16px/1.75; телефон15px; читаемая светлая типографика на чёрном."
+      },
+      "label": {
+        "displayName": "Действие",
+        "purpose": "Кнопки с весом 700; подписи и вкладки имеют локальные веса."
+      },
+      "editorial": {
+        "displayName": "Уточняющая фраза",
+        "purpose": "Manrope20px/1.5 на desktop,16px на телефоне. Cormorant ограничен концептом психолога."
+      }
+    },
+    "shadows": [
+      {
+        "name": "primary-action",
+        "value": "none",
+        "purpose": "Светлое действие без прежнего цветного свечения."
+      },
+      {
+        "name": "concept-stage",
+        "value": "filter: drop-shadow(0 28px 36px #0008)",
+        "purpose": "Чёрная тень галереи."
+      },
+      {
+        "name": "process-sheet",
+        "value": "filter: drop-shadow(17px 28px 22px #0009)",
+        "purpose": "Светлый лист над графитовым основанием."
+      },
+      {
+        "name": "scope-fold",
+        "value": "14px 23px 28px -12px #0007",
+        "purpose": "Тени геометрических граней."
+      },
+      {
+        "name": "sculpture-ground",
+        "value": "#000b; ellipse; blur(24px)",
+        "purpose": "Тёмное основание серебряной WebGL-скульптуры."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "FAQ, действия и переключение мини-сайтов."
+      },
+      {
+        "name": "scroll-controller",
+        "value": "one passive scroll listener; requestAnimationFrame; visible records only; reads before writes",
+        "purpose": "scroll-scenes.js координирует сцену героя, галерею, складку, непрерывный процесс, строки и footer; естественная прокрутка сохраняется."
+      },
+      {
+        "name": "hero-scroll",
+        "value": "translateY(0 → -90px desktop; 0 → -24px mobile); dataset.scrollProgress 0…1",
+        "purpose": "Одновременно смещает сцену и сообщает прогресс WebGL pose."
+      },
+      {
+        "name": "gallery-scroll",
+        "value": "rotateX14deg→0; rotateY-9deg→0; translateY75px→0; scale.93→1; mobile gentler",
+        "purpose": "Пространственный вход галереи; мобильные пределы 45px, 8deg, .95."
+      },
+      {
+        "name": "scope-scroll-fold",
+        "value": "rotateY(-32deg → 36deg); translateY(0 → -55px); fold-spread(28px → 0)",
+        "purpose": "Непрерывная сборка складки тёмной секции."
+      },
+      {
+        "name": "process-assembly",
+        "value": "--assembly:0…1; rotateX(26deg → 0), rotateY(-30deg → 0), rotateZ(-20deg → 0); no transitions",
+        "purpose": "Листы собираются непрерывно по чтению списка; этапы только подписывают прогресс."
+      },
+      {
+        "name": "row-reveal",
+        "value": "opacity .74 → 1; section-specific translations 15–45px; optional rotateX(9deg → 0)",
+        "purpose": "Содержимое не скрывается; движение строк различается по разделам."
+      },
+      {
+        "name": "footer-scroll",
+        "value": "translateY(50px → 0), rotateX(22deg → 0)",
+        "purpose": "Финальная типографическая плоскость. footerProgress учитывает remainingScroll, чтобы конечная поза была достижима до конца документа."
+      },
+      {
+        "name": "page-progress",
+        "value": "2px fixed bar; scaleX(scrollY / scrollableHeight)",
+        "purpose": "Визуальный прогресс естественной прокрутки."
+      },
+      {
+        "name": "webgl-rigid-geometry",
+        "value": "analytic continuous S-path; subdivided broad faces; rounded bevel; no vertex deformation",
+        "purpose": "ribbon-geometry.js; серебро/графит и нейтральные отражения вместо разноцветного пигмента."
+      },
+      {
+        "name": "webgl-pose",
+        "value": "yaw clamp[-.82,.82]; pitch clamp[-.40,.48]; pointer contribution .45/.26rad; scroll scale 1.02 → .88",
+        "purpose": "Ограниченная поза без бесконечного оборота; pointer нормализуется по всей .hero. Реакция сглаживается exp(-delta*10), прогресс exp(-delta*12)."
+      },
+      {
+        "name": "webgl-render-budget",
+        "value": "45fps max; 30fps weak or coarse; DPR ≤1.5 or ≤1.25 weak; rows 220 or 128",
+        "purpose": "Первый кадр вызывается сразу, невидимая сцена и скрытая вкладка останавливают цикл."
+      },
+      {
+        "name": "coarse-introduction",
+        "value": "3s continuous introduction; subsequent scroll requests render updated static poses",
+        "purpose": "На телефоне модель остаётся видимой и следует за прокруткой без постоянного idle-рендера."
+      },
+      {
+        "name": "faq-open-close",
+        "value": "420ms open / 280ms close",
+        "purpose": "Нативный exclusive FAQ и анимация высоты без зависимости содержания от анимации."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "complete static WebGL pose; assembly=1; reveal=1; normal process flow; natural scroll",
+        "purpose": "Системное и ручное уменьшение движения сохраняет законченные сцены."
+      },
+      {
+        "name": "webgl-fallback",
+        "value": "assets/shadow-720.webp / assets/shadow-1440.webp; invert(1) grayscale(1) brightness(.75); screen; opacity .7",
+        "purpose": "Резервная монохромная сцена при недоступности или ошибке WebGL."
+      },
+      {
+        "name": "card-turns-v4",
+        "value": "outgoing240ms; incoming660ms; captured interrupted pose; pointer±4.5°/7.5°",
+        "purpose": "Изолированные слои; inert snapshot; natural scrolling; reduced/hidden/offscreen reset."
+      },
+      {
+        "name": "sculpture-turn-v4",
+        "value": "critically damped .28s pointer/.32s scroll; active60fps, idle45fps, weak/coarse30fps",
+        "purpose": "Плавный старт/разворот с сохранением скорости, mobile settling и остановка."
+      },
+      {
+        "name": "reading-light",
+        "value": "per-line color ink→accent; underline scaleX0→1",
+        "purpose": "Свет проявляет смысловые строки, текст всегда виден."
+      },
+      {
+        "name": "scope-leaves",
+        "value": "rotateY-22deg→0; translateX65px→0; phone12deg/24px; opacity.88→1",
+        "purpose": "Пункты состава работы разворачиваются, геометрия читается со стабильного wrapper."
+      },
+      {
+        "name": "faq-wave",
+        "value": "alternating translateX±38px→0; phone±18px; separator scaleX0→1",
+        "purpose": "FAQ появляется волной; scroll-поза независима от раскрытия ответа."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "min-width: 1600px"
+      },
+      {
+        "name": "laptop",
+        "value": "max-width: 1100px"
+      },
+      {
+        "name": "tablet",
+        "value": "max-width: 800px"
+      },
+      {
+        "name": "concept-mobile",
+        "value": "max-width: 700px"
+      },
+      {
+        "name": "concept-container",
+        "value": "container max-width: 620px"
+      },
+      {
+        "name": "mobile",
+        "value": "max-width: 600px"
+      },
+      {
+        "name": "narrow",
+        "value": "max-width: 375px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Лаймовая главная кнопка",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Основное действие чёрного первого экрана; лаванда при наведении, без цветной тени.",
+      "html": "<button class=\"ds-primary\" type=\"button\">Обсудить мой сайт<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></button>",
+      "css": ".ds-primary{font-family:var(--font-sans,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:58px;padding:17px 23px;border:1px solid transparent;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer;background:#d6ff62;color:#171b0c;box-shadow:none;transition:background .25s,color .25s;}.ds-primary:hover{background:var(--accent,#d6ff62);color:#17131f}.ds-primary svg{flex:0 0 24px;transition:transform .25s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-primary:hover svg{transform:translateX(4px)}.ds-primary:focus-visible{outline:2px solid var(--accent,#d6ff62);outline-offset:6px;}.ds-primary:disabled{cursor:wait;opacity:.65}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-primary svg{transition:none}}"
+    },
+    {
+      "name": "Лаймовое действие формы",
+      "kind": "button",
+      "refersTo": "button-contact",
+      "description": "Действие тёмного раздела обращения; светлая лаванда при наведении.",
+      "html": "<button class=\"ds-contact-button\" type=\"button\">Подготовить обращение<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></button>",
+      "css": ".ds-contact-button{font-family:var(--font-sans,Manrope,Arial,sans-serif);display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:58px;padding:17px 23px;border:1px solid transparent;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer;background:#d6ff62;color:#171b0c;box-shadow:none;transition:background .25s,color .25s;}.ds-contact-button:hover{background:var(--accent-text,#c1a4ff);color:#17131f}.ds-contact-button svg{flex:0 0 24px;transition:transform .25s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-contact-button:hover svg{transform:translateX(4px)}.ds-contact-button:focus-visible{outline:2px solid var(--accent,#d6ff62);outline-offset:6px;}.ds-contact-button:disabled{cursor:wait;opacity:.65}@media(prefers-reduced-motion:reduce){.ds-contact-button,.ds-contact-button svg{transition:none}}"
+    },
+    {
+      "name": "Текстовая ссылка",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Наследует светлый текст тёмной поверхности; стрелка и линия при наведении.",
+      "html": "<a class=\"ds-text-link\" href=\"#concepts\">Посмотреть концепции<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:18px;min-height:44px;position:relative;color:var(--ink,#f6f5fa);font-family:var(--font-sans,Manrope,Arial,sans-serif);font-size:13px;text-decoration:none}.ds-text-link:after{content:\"\";height:1px;position:absolute;left:0;right:40px;bottom:8px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-text-link:hover:after{transform:scaleX(1)}.ds-text-link:focus-visible{outline:2px solid var(--accent,#d6ff62);outline-offset:6px;}@media(prefers-reduced-motion:reduce){.ds-text-link:after{transition:none}}"
+    },
+    {
+      "name": "Поле на графите",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Светлый ввод, приглушённый placeholder и лавандовый фокус на тёмной поверхности.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-contact-name\">Как к вам обращаться <span aria-label=\"обязательное поле\">*</span></label><input class=\"ds-field-input\" id=\"ds-contact-name\" type=\"text\" placeholder=\"Ваше имя\" autocomplete=\"name\" aria-describedby=\"ds-contact-name-error\" required><span class=\"ds-field-error\" id=\"ds-contact-name-error\"></span></div>",
+      "css": ".ds-field{padding:24px;background:#181021;color:#f6f5fa;font-family:var(--font-sans,Manrope,Arial,sans-serif);}.ds-field-label{display:flex;gap:5px;align-items:baseline;font-size:12px;font-weight:600;margin-bottom:10px}.ds-field-label span{color:#cac0e9;font-size:11px}.ds-field-input{background:transparent;border:0;border-bottom:1px solid #78628c;width:100%;padding:9px 0 13px;border-radius:0;color:#f6f5fa;font-family:var(--font-sans,Manrope,Arial,sans-serif);font-size:14px;line-height:1.6;caret-color:var(--accent,#d6ff62);transition:border-color .2s}.ds-field-input::placeholder{color:#bcb0c9;opacity:1}.ds-field-input:focus{border-color:#d7d1ef;outline:2px solid #c1a4ff;outline-offset:5px}.ds-field .ds-field-input:focus-visible{outline-color:var(--lime,#d6ff62)}.ds-field-input[aria-invalid=true]{border-color:#e8a1a1}.ds-field-error{display:block;font-size:11px;color:#ffb9b9;line-height:1.5;margin-top:6px}.ds-field-error:empty{display:none}@media(max-width:600px){.ds-field-input{font-size:16px;padding:7px 0 12px}}@media(prefers-reduced-motion:reduce){.ds-field-input{transition:none}}"
+    },
+    {
+      "name": "Лаймовая навигация",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Светлые ссылки и тёмное действие с графитовой границей.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Навигация\"><a class=\"ds-nav-link\" href=\"#concepts\">Концепции</a><a class=\"ds-nav-link\" href=\"#process\">Процесс</a><a class=\"ds-nav-link ds-nav-cta\" href=\"#contact\">Обсудить сайт<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:36px;color:var(--ink,#f6f5fa);font-family:var(--font-sans,Manrope,Arial,sans-serif);font-size:13px;font-weight:500}.ds-nav-link{position:relative;display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ds-nav-link:after{content:\"\";position:absolute;bottom:8px;left:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-nav-link:hover:after{transform:scaleX(1)}.ds-nav-link:focus-visible{outline:2px solid var(--accent,#d6ff62);outline-offset:6px;}.ds-nav-cta{gap:22px;margin-left:12px;padding:12px 18px;background:#15171f;color:#f6f5fa;border:1px solid #333642;border-radius:4px;transition:background .25s}.ds-nav-cta:after{display:none}.ds-nav-cta:hover{background:var(--accent,#d6ff62);color:#15121f}@media(max-width:600px){.ds-nav{align-items:stretch;flex-direction:column;gap:0;padding:22px 20px 30px;background:#181021;font-size:15px}.ds-nav-link{min-height:54px;padding-block:15px;border-bottom:1px solid var(--line,#2a2c36)}.ds-nav-link:after{display:none}.ds-nav-cta{margin-left:0;margin-top:17px;justify-content:space-between;padding-inline:16px;background:#1b1e29;color:white}}@media(prefers-reduced-motion:reduce){.ds-nav-link:after,.ds-nav-cta{transition:none}}"
+    },
+    {
+      "name": "Вкладки тёмной галереи",
+      "kind": "chip",
+      "refersTo": "concept-tab",
+      "description": "Серые рамки и светлый выбранный вариант; миры мини-сайтов остаются отдельными.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\" aria-label=\"Концепции\"><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"true\">Репетитор</button><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Тренер</button><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Психолог</button></div>",
+      "css": ".ds-tabs{display:flex;gap:5px;background:#100d18;padding:24px}.ds-tab{font-family:var(--font-sans,Manrope,Arial,sans-serif);font-size:13px;min-height:44px;padding:11px 20px;background:transparent;border:1px solid #3b3d4a;border-radius:4px;color:#d9dce9;cursor:pointer;transition:background .25s,color .25s,border-color .25s}.ds-tab:hover{background:#20232e;border-color:#74798b;color:white}.ds-tab[aria-selected=true]{background:#f6f5fa;color:#13141c;border-color:#f6f5fa;font-weight:750}.ds-tab:focus-visible{outline:2px solid var(--lime,#d6ff62);outline-offset:6px}@media(max-width:600px){.ds-tabs{gap:4px}.ds-tab{flex:1;padding:12px 5px;font-size:11px;min-height:48px}}@media(prefers-reduced-motion:reduce){.ds-tab{transition:none}}"
+    },
+    {
+      "name": "Exclusive FAQ на чёрном",
+      "kind": "custom",
+      "description": "Максимум один открытый ответ; реальная анимация высоты 420/280ms остаётся в модуле приложения.",
+      "html": "<div class=\"ds-faq-group\"><details class=\"ds-faq\" name=\"ds-practice-questions\" open><summary class=\"ds-faq-question\">Что нужно для начала?<span class=\"ds-faq-sign\" aria-hidden=\"true\"></span></summary><div class=\"ds-faq-answer\">Коротко расскажите о своей практике и задаче будущего сайта.</div></details><details class=\"ds-faq\" name=\"ds-practice-questions\"><summary class=\"ds-faq-question\">Можно ли изменить структуру?<span class=\"ds-faq-sign\" aria-hidden=\"true\"></span></summary><div class=\"ds-faq-answer\">Структура следует содержанию и задачам вашей практики.</div></details></div>",
+      "css": ".ds-faq-group{color:var(--ink,#f6f5fa);font-family:var(--font-sans,Manrope,Arial,sans-serif);}.ds-faq{overflow:hidden;border-bottom:1px solid var(--line,#2a2c36)}.ds-faq:first-child{border-top:1px solid var(--line,#2a2c36)}.ds-faq-question{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:24px 0;color:#e1e3ed;font-size:15px;line-height:1.55;font-weight:600;transition:color .25s}.ds-faq-question::-webkit-details-marker{display:none}.ds-faq-question:focus-visible{outline:2px solid var(--accent,#d6ff62);outline-offset:6px;}.ds-faq-question:hover,.ds-faq[open]>.ds-faq-question{color:#c1a4ff}.ds-faq-sign{position:relative;flex:0 0 40px;width:40px;height:40px;border:1px solid #383c4b;border-radius:50%;background:#15171f;color:#dcd7ed;transition:transform .5s var(--ease,cubic-bezier(.16,1,.3,1)),background .25s,color .25s,border-color .25s}.ds-faq-sign:before,.ds-faq-sign:after{content:\"\";position:absolute;background:currentColor;left:12px;top:18px;width:14px;height:2px;border-radius:1px;transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1)),opacity .2s}.ds-faq-sign:after{transform:rotate(90deg)}.ds-faq-question:hover .ds-faq-sign{border-color:var(--accent,#d6ff62);transform:rotate(90deg)}.ds-faq[open] .ds-faq-sign{background:#d6ff62;border-color:#d6ff62;color:#15121e;transform:rotate(180deg)}.ds-faq[open] .ds-faq-sign:after{transform:rotate(90deg) scaleX(0);opacity:0}.ds-faq-answer{padding:0 64px 26px 0;color:var(--muted,#b4b4c8);font-size:14px;line-height:1.65;max-width:54ch}@media(max-width:600px){.ds-faq-sign{flex-basis:36px;width:36px;height:36px}.ds-faq-sign:before,.ds-faq-sign:after{left:10px;top:16px}.ds-faq-answer{padding:0 45px 25px 0;font-size:13px}}@media(prefers-reduced-motion:reduce){.ds-faq-question,.ds-faq-sign,.ds-faq-sign:before,.ds-faq-sign:after{transition:none}}"
+    },
+    {
+      "name": "Фиолетово-лаймовый знак рельефа",
+      "kind": "custom",
+      "description": "Три холодные лавандовые полосы и светлый словесный знак.",
+      "html": "<div class=\"ds-brand\"><span class=\"ds-brand-mark\" aria-hidden=\"true\"><i></i><i></i><i></i></span><span>ПРОЯВЛЕНО</span></div>",
+      "css": ".ds-brand{display:inline-flex;align-items:center;gap:13px;min-height:44px;color:var(--ink,#f6f5fa);font-family:var(--font-sans,Manrope,Arial,sans-serif);font-size:20px;font-weight:800;letter-spacing:-.03em}.ds-brand-mark{display:inline-flex;align-items:flex-end;gap:3px;width:25px;height:26px}.ds-brand-mark i{display:block;width:6px;background:var(--accent,#d6ff62)}.ds-brand-mark i:nth-child(1){height:15px}.ds-brand-mark i:nth-child(2){height:26px}.ds-brand-mark i:nth-child(3){height:21px;background:var(--coral,#d6ff62)}"
+    },
+    {
+      "name": "Собранный лист V4",
+      "kind": "custom",
+      "description": "Готовое статичное состояние светлой страницы на графитовом основании; в приложении сборка непрерывна по скроллу.",
+      "html": "<div class=\"ds-process\"><div class=\"ds-page\"><div class=\"ds-slice ds-slice-one\"><i></i><i></i><i></i></div><div class=\"ds-slice ds-slice-two\"><i></i></div><div class=\"ds-slice ds-slice-three\"><i></i><i></i></div><div class=\"ds-slice ds-slice-four\"><i></i><i></i><i></i></div></div></div>",
+      "css": ".ds-process{height:260px;display:flex;align-items:center;justify-content:center;background:#121019;border:1px solid #292d39;border-radius:4px;overflow:hidden;perspective:1100px}.ds-page{width:43%;height:68%;position:relative;filter:drop-shadow(17px 28px 22px #0009)}.ds-slice{position:absolute;left:0;width:100%;height:25%;background:#f2f3f8;border-bottom:1px solid #e7e7f2;display:flex;align-items:center;padding:8%;box-sizing:border-box}.ds-slice i{display:block;background:#e3e3f2;height:5px}.ds-slice-one{top:0;gap:5%;border-top:3px solid var(--accent,#d6ff62)}.ds-slice-one i{width:13%;height:4px}.ds-slice-one i:first-child{width:38%;background:#20222c;margin-right:auto}.ds-slice-two{top:25%}.ds-slice-two i{height:18px;width:85%;background:#9785df}.ds-slice-three{top:50%;gap:10%}.ds-slice-three i:first-child{width:45%;height:46px;background:#b9b2ff}.ds-slice-three i:last-child{width:35%;height:3px;box-shadow:0 7px #e3e3f2,0 -7px #e3e3f2}.ds-slice-four{top:75%;gap:6%;border-bottom:0}.ds-slice-four i{width:27%;height:22px}.ds-slice-four i:first-child{background:#a89ace}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Рельеф экспертизы",
+    "overview": "Пользователь выбрал Ультрафиолет основной гаммой. Цвета заданы в HTML/CSS до JS, preview начинает с активного варианта. Основная поверхность использует Manrope вместо Unbounded; Cormorant остаётся в мини-концепте. FAQ850мс открытие/520мс закрытие и800–850мс знак. Компоновка окна V5 сохранена. Visual QA текущей доработки не выполнена из-за сохранённого browser origin deny.",
+    "keyCharacteristics": [
+      "Чёрная сцена, электрический фиолетовый и лаймовый сигнал.",
+      "Unbounded для характера, Manrope для чтения.",
+      "Гладкая жёсткая модель, свет по контуру и демпфирование ракурса.",
+      "Раздельные слои scroll, pointer tilt и смены карточек.",
+      "Сразу доступное содержимое, reduced motion, offscreen/hidden остановка."
+    ],
+    "rules": [
+      {
+        "name": "The Surface Role Rule",
+        "body": "Светлый текст принадлежит тёмной поверхности; светлая кнопка получает тёмный текст. Старые имена переменных не определяют актуальный цвет.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Families Rule",
+        "body": "Основная страница: Unbounded и Manrope; Cormorant остаётся только внутри самостоятельного психологического концепта.",
+        "section": "typography"
+      },
+      {
+        "name": "The Immediate Scene Rule",
+        "body": "Первая композиция показывает предложение и сцену без прелоадера; доступность текста и действий не зависит от загрузки WebGL.",
+        "section": "layout"
+      },
+      {
+        "name": "The Complete Stillness Rule",
+        "body": "Системное или ручное уменьшение движения показывает законченные сцены и все ответы по запросу; текст не требует запуска scroll-анимации.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Viewport Rule",
+        "body": "Первый экран занимает минимум окно за вычетом header; текст и сцена ограничены vw/svh, содержимое растёт для zoom без clipping.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "Сохранять чёрный фон, фиолетовый свет, лаймовое действие и светлый читаемый текст.",
+      "Использовать self-hosted Unbounded и Manrope, оставлять шрифтовой swap.",
+      "Сохранять независимые transform-слои, плавную отмену и reduced motion.",
+      "Удерживать фактический контент и форму без зависимости от WebGL."
+    ],
+    "donts": [
+      "Не возвращать прежнюю палитру как общий канон.",
+      "Не вводить неограниченные повороты или скрывать чтение за анимацией.",
+      "Не считать unit-тесты и старые снимки визуальной QA V4."
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+/* Three scroll gestures: a reading light, opening leaves, and alternating questions. */
+.light-line { position: relative; display: inline-block; isolation: isolate; max-width: 100%; color: color-mix(in srgb, var(--ink) calc((1 - var(--line-progress, 1)) * 100%), var(--accent)); }
+.light-line::after { content: ''; position: absolute; z-index: -1; left: 0; right: 0; bottom: .06em; height: .16em; background: var(--accent); opacity: .28; transform: scaleX(var(--line-progress, 1)); transform-origin: left; }
+
+.scope-panel { --fan-progress: 1; perspective: 1100px; }
+.scope-panel > article { transform-origin: 0 50%; transform: translateX(calc((1 - var(--fan-progress)) * 65px)) rotateY(calc((1 - var(--fan-progress)) * -22deg)); opacity: calc(.88 + var(--fan-progress) * .12); }
+
+.faq-entry { --wave-progress: 1; --entry-offset: 38px; position: relative; }
+.faq-entry:nth-child(even) { --entry-offset: -38px; }
+.faq-entry::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--accent); opacity: .7; transform: scaleX(var(--wave-progress)); transform-origin: left; }
+.faq-entry:nth-child(even)::before { transform-origin: right; }
+.faq-entry > details { transform: translateX(calc((1 - var(--wave-progress)) * var(--entry-offset))); opacity: calc(.88 + var(--wave-progress) * .12); }
+.faq-entry:focus-within > details { transform: none; opacity: 1; }
+
+@media (max-width: 600px) {
+  .scope-panel > article { transform: translateX(calc((1 - var(--fan-progress)) * 24px)) rotateY(calc((1 - var(--fan-progress)) * -12deg)); }
+  .faq-entry { --entry-offset: 18px; }
+  .faq-entry:nth-child(even) { --entry-offset: -18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scope-panel > article, .faq-entry > details, .light-line::after, .faq-entry::before { transform: none !important; opacity: 1; }
+}
+html[data-reduced-motion] .scope-panel > article,
+html[data-reduced-motion] .faq-entry > details,
+html[data-reduced-motion] .light-line::after,
+html[data-reduced-motion] .faq-entry::before { transform: none !important; opacity: 1; }

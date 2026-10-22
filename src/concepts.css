@@ -1,0 +1,173 @@
+.concept {
+  --concept-ink: #233c91;
+  --concept-ground: #f4f0e4;
+  --concept-line: #c4c8d0;
+  color: var(--concept-ink);
+  background: var(--concept-ground);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 28px 42px 0;
+  font-family: var(--font-sans, sans-serif);
+  container-type: inline-size;
+}
+
+.concept *, .concept *::before, .concept *::after { box-sizing: border-box; }
+.concept ::selection { background: var(--concept-ink); color: var(--concept-ground); }
+.concept__masthead { position: relative; z-index: 2; display: flex; align-items: start; justify-content: space-between; gap: 24px; padding-bottom: 22px; }
+.concept__brand { font-size: 17px; font-weight: 750; line-height: 1.35; letter-spacing: -.025em; }
+.concept__note { max-width: 27ch; text-align: right; font-size: 12px; line-height: 1.5; }
+.concept__hero { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: auto 1fr; align-items: start; column-gap: 30px; min-height: 355px; }
+.concept__title { position: relative; z-index: 1; grid-column: 1; margin: 18px 0 24px; max-width: 12ch; font-size: clamp(48px, 6.2cqw, 76px); font-weight: 650; line-height: .99; letter-spacing: -.04em; text-wrap: balance; }
+.concept__copy { position: relative; z-index: 1; grid-column: 1; grid-row: 2; align-self: end; padding-bottom: 32px; }
+.concept__description { margin: 0 0 24px; max-width: 35ch; font-size: 14px; font-weight: 450; line-height: 1.65; }
+.concept__action { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; padding: 13px 18px; max-width: 100%; border: 1px solid var(--concept-ink); color: var(--concept-ground); background: var(--concept-ink); font-size: 13px; line-height: 1.45; font-weight: 650; text-decoration: none; text-underline-offset: .2em; transition: background-color 180ms, color 180ms; }
+.concept__action svg { width: 22px; height: 22px; flex: 0 0 22px; stroke: currentColor; stroke-width: 1.5; }
+.concept__action:hover { color: var(--concept-ink); background: var(--concept-ground); }
+.concept__action:focus-visible { outline: 2px solid var(--concept-ink); outline-offset: 5px; }
+.concept__art { position: relative; grid-column: 2; grid-row: 1 / 3; align-self: stretch; pointer-events: none; user-select: none; }
+.concept__tags { position: relative; z-index: 2; display: flex; gap: 0; margin: 0; padding: 15px 0 17px; border-top: 1px solid var(--concept-line); list-style: none; font-size: 12px; font-weight: 500; line-height: 1.5; }
+.concept__tags li { flex: 1; padding: 0 16px; }
+.concept__tags li:first-child { padding-left: 0; }
+.concept__tags li:last-child { padding-right: 0; }
+.concept__tags li + li { border-left: 1px solid var(--concept-line); }
+
+/* A printed learning sheet: the letter becomes a point of departure. */
+.concept--tutor { --concept-line: #c7cbd5; padding-top: 28px; }
+.concept--tutor .concept__masthead { border-bottom: 1px solid var(--concept-ink); }
+.concept--tutor .concept__title { margin-top: 28px; }
+.tutor-art { margin: 16px -2px 15px 0; }
+.tutor-art__letter { position: absolute; top: -32px; left: 6%; font-family: var(--font-serif, serif); font-size: clamp(240px, 33cqw, 370px); font-weight: 500; line-height: 1; letter-spacing: -.04em; color: #3b60c5; }
+.tutor-art__path { position: absolute; width: 100%; height: 100%; top: 0; left: 0; overflow: visible; stroke: var(--concept-ink); stroke-width: 1.5; }
+.tutor-art__path circle { fill: var(--concept-ground); }
+.tutor-art__rule { position: absolute; right: 9%; top: 23px; bottom: 28px; width: 1px; background: #c7cbd5; }
+
+/* A training poster whose weight comes from the grid and typography. */
+.concept--trainer { --concept-ink: #20231f; --concept-ground: #d7f347; --concept-line: #778525; padding: 26px 34px 0; }
+.concept--trainer .concept__masthead { padding-bottom: 21px; border-bottom: 1px solid var(--concept-ink); }
+.concept--trainer .concept__brand { max-width: 15ch; font-size: 20px; font-weight: 800; text-transform: uppercase; }
+.concept--trainer .concept__note { max-width: 26ch; font-weight: 550; }
+.concept--trainer .concept__hero { grid-template-columns: 1.5fr 1fr; column-gap: 20px; min-height: 370px; }
+.concept--trainer .concept__title { max-width: 12ch; margin: 25px 0 28px; font-size: clamp(46px, 6.1cqw, 76px); line-height: .98; font-weight: 800; }
+.concept--trainer .concept__copy { display: flex; align-items: end; gap: 25px; grid-column: 1 / -1; padding-bottom: 28px; }
+.concept--trainer .concept__description { max-width: 32ch; margin-bottom: 0; }
+.concept--trainer .concept__action { flex-shrink: 0; color: var(--concept-ground); }
+.concept--trainer .concept__action:hover { color: var(--concept-ink); }
+.concept--trainer .concept__tags { border-top-color: var(--concept-ink); text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .025em; }
+.trainer-art { grid-row: 1; min-height: 235px; margin-right: -34px; overflow: hidden; border-left: 1px solid var(--concept-ink); }
+.trainer-art__letter { position: absolute; top: -28px; right: -8%; font-size: clamp(260px, 37cqw, 450px); font-weight: 800; line-height: 1; letter-spacing: -.04em; }
+.trainer-art__bar { position: absolute; height: 14px; width: 135%; right: -15%; background: var(--concept-ground); transform: rotate(-36deg); }
+.trainer-art__bar--one { top: 43%; }
+.trainer-art__bar--two { top: 59%; }
+
+/* Quiet editorial typography, held by one open linear sculpture. */
+.concept--psychologist { --concept-ink: #344b3e; --concept-ground: #edf0e8; --concept-line: #aab8aa; padding: 27px 42px 0; }
+.concept--psychologist .concept__brand { font-family: var(--font-serif, serif); font-size: 25px; font-weight: 550; letter-spacing: -.015em; }
+.concept--psychologist .concept__note { max-width: 22ch; }
+.concept--psychologist .concept__hero { grid-template-columns: .85fr 1.5fr; column-gap: 38px; min-height: 367px; }
+.concept--psychologist .concept__title { grid-column: 2; max-width: 14ch; margin: 24px 0 20px; font-family: var(--font-serif, serif); font-size: clamp(54px, 7.2cqw, 84px); font-weight: 450; font-style: italic; letter-spacing: -.03em; line-height: .96; }
+.concept--psychologist .concept__copy { grid-column: 2; padding-bottom: 35px; }
+.concept--psychologist .concept__description { max-width: 38ch; }
+.concept--psychologist .concept__action { padding: 8px 0; min-height: 39px; border-width: 0 0 1px; background: transparent; color: var(--concept-ink); gap: 30px; }
+.concept--psychologist .concept__action:hover { background: transparent; border-bottom-width: 2px; padding-bottom: 7px; }
+.concept--psychologist .concept__tags { padding-top: 17px; padding-bottom: 19px; }
+.psychologist-art { grid-column: 1; margin: 5px 0 25px -12px; }
+.psychologist-art svg { display: block; width: 100%; height: 100%; min-height: 315px; stroke: #788d77; stroke-width: 1; }
+
+/* A precise consultation page: a typographic column and measured geometry. */
+.concept--doctor { --concept-ink: #123666; --concept-ground: #f3f5f4; --concept-line: #a9bac9; padding: 0 38px; }
+.concept--doctor .concept__masthead { padding: 27px 0 23px; border-bottom: 1px solid var(--concept-line); }
+.concept--doctor .concept__brand { max-width: 23ch; font-size: 16px; font-weight: 700; letter-spacing: -.02em; }
+.concept--doctor .concept__note { max-width: 25ch; }
+.concept--doctor .concept__hero { grid-template-columns: 1.4fr 1fr; column-gap: 35px; min-height: 367px; }
+.concept--doctor .concept__title { margin: 27px 0 24px; max-width: 12ch; font-size: clamp(45px, 5.9cqw, 72px); line-height: 1.03; font-weight: 550; letter-spacing: -.035em; }
+.concept--doctor .concept__copy { padding-bottom: 30px; }
+.concept--doctor .concept__description { max-width: 37ch; }
+.concept--doctor .concept__action { gap: 32px; }
+.doctor-art { border-left: 1px solid var(--concept-line); margin: 0 -38px 0 0; padding: 35px 24px 26px; }
+.doctor-art svg { width: 100%; height: 100%; stroke: #6e8aa7; stroke-width: 1; }
+.doctor-art__arc { fill: #123666; stroke: #123666; }
+.doctor-art__point { fill: #123666; stroke: #123666; }
+.concept--doctor .concept__tags { margin: 0 -38px; padding: 0; border-top-color: var(--concept-line); }
+.concept--doctor .concept__tags li { padding: 16px 20px; }
+.concept--doctor .concept__tags li:first-child { padding-left: 38px; }
+.concept--doctor .concept__tags li:last-child { padding-right: 38px; }
+
+.concept-stage.concept-changing .concept { animation: concept-enter 380ms cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes concept-enter { from { opacity: .7; clip-path: inset(0 0 4% 0); } to { opacity: 1; clip-path: inset(0); } }
+
+@container (max-width: 620px) {
+  .concept__masthead { gap: 18px; padding-bottom: 18px; }
+  .concept__brand { font-size: 16px; }
+  .concept__note { max-width: 20ch; font-size: 11px; }
+  .concept__hero { column-gap: 15px; min-height: 335px; }
+  .concept__title { font-size: 46px; }
+  .concept__description { font-size: 13px; }
+  .concept__action { font-size: 12px; padding: 12px 14px; gap: 16px; }
+  .concept__tags { font-size: 11px; }
+  .concept--trainer .concept__title { font-size: 46px; }
+  .concept--trainer .concept__copy { gap: 18px; }
+  .concept--trainer .concept__description { max-width: 28ch; }
+  .concept--psychologist .concept__hero { column-gap: 20px; }
+  .concept--psychologist .concept__title { font-size: 56px; }
+  .concept--doctor .concept__title { font-size: 45px; }
+}
+
+@media (max-width: 700px) {
+  .concept { padding: 21px 22px 0; }
+  .concept__masthead { gap: 20px; padding-bottom: 17px; }
+  .concept__brand { font-size: 15px; }
+  .concept__note { max-width: 18ch; font-size: 13px; line-height: 1.5; }
+  .concept__hero { grid-template-columns: 1fr; min-height: 0; column-gap: 0; }
+  .concept__title { margin-top: 23px; margin-bottom: 19px; max-width: 12ch; font-size: 38px; line-height: 1.04; }
+  .concept__copy { grid-column: 1; grid-row: auto; padding-bottom: 26px; }
+  .concept__description { max-width: 34ch; margin-bottom: 20px; font-size: 13px; line-height: 1.65; }
+  .concept__action { min-height: 46px; font-size: 13px; padding: 12px 15px; gap: 24px; }
+  .concept__tags { flex-direction: column; gap: 5px; padding: 14px 0 16px; font-size: 13px; }
+  .concept__tags li, .concept__tags li:first-child, .concept__tags li:last-child { padding: 0; }
+  .concept__tags li + li { border: 0; }
+  .concept__art { grid-column: 1; grid-row: auto; }
+  .concept--tutor .concept__title { max-width: 12ch; margin-top: 24px; padding-right: 0; }
+  .tutor-art { height: 175px; margin: -4px 0 12px; grid-row: 2; }
+  .tutor-art__letter { top: -47px; left: 14%; font-size: 250px; }
+  .tutor-art__path { left: auto; right: -10px; width: 76%; }
+  .tutor-art__rule { right: 8%; top: 0; bottom: 4px; }
+  .concept--trainer { padding: 21px 22px 0; }
+  .concept--trainer .concept__brand { font-size: 17px; }
+  .concept--trainer .concept__note { max-width: 17ch; }
+  .concept--trainer .concept__hero { grid-template-columns: 1fr; min-height: 0; }
+  .concept--trainer .concept__title { margin-top: 24px; margin-bottom: 20px; max-width: 11ch; font-size: 38px; line-height: 1.02; }
+  .concept--trainer .concept__copy { display: block; grid-column: 1; padding-bottom: 27px; }
+  .concept--trainer .concept__description { max-width: 34ch; margin-bottom: 21px; }
+  .trainer-art { grid-row: 2; height: 108px; min-height: 0; margin: 0 -22px 23px; border: 0; background: var(--concept-ink); }
+  .trainer-art__letter { top: -58px; right: 6%; font-size: 220px; color: var(--concept-ground); }
+  .trainer-art__bar { width: 82%; height: 8px; right: -9%; background: var(--concept-ink); }
+  .concept--trainer .concept__tags { gap: 6px; font-size: 13px; }
+  .concept--psychologist { padding: 22px 22px 0; }
+  .concept--psychologist .concept__brand { font-size: 23px; }
+  .concept--psychologist .concept__note { max-width: 16ch; }
+  .concept--psychologist .concept__hero { grid-template-columns: 1fr; min-height: 0; }
+  .concept--psychologist .concept__title { grid-column: 1; margin: 21px 0 18px; max-width: 13ch; font-size: 40px; line-height: 1; }
+  .concept--psychologist .concept__copy { grid-column: 1; padding-bottom: 27px; }
+  .concept--psychologist .concept__description { max-width: 34ch; }
+  .psychologist-art { grid-row: 2; height: 160px; margin: -7px 0 15px; }
+  .psychologist-art svg { min-height: 0; }
+  .concept--psychologist .concept__action { font-size: 13px; }
+  .concept--doctor { padding: 0 22px; }
+  .concept--doctor .concept__masthead { padding: 21px 0 18px; }
+  .concept--doctor .concept__brand { max-width: 17ch; font-size: 14px; }
+  .concept--doctor .concept__note { max-width: 17ch; }
+  .concept--doctor .concept__hero { grid-template-columns: 1fr; min-height: 0; column-gap: 0; }
+  .concept--doctor .concept__title { margin-top: 24px; margin-bottom: 20px; max-width: 12ch; font-size: 36px; line-height: 1.05; }
+  .concept--doctor .concept__copy { padding-bottom: 27px; }
+  .concept--doctor .concept__description { max-width: 34ch; }
+  .doctor-art { grid-row: 2; height: 164px; margin: -2px 0 18px; padding: 0; border: 0; }
+  .doctor-art svg { display: block; max-width: 164px; margin-left: auto; }
+  .concept--doctor .concept__tags { margin: 0 -22px; padding: 14px 22px 17px; }
+  .concept--doctor .concept__tags li, .concept--doctor .concept__tags li:first-child, .concept--doctor .concept__tags li:last-child { padding: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-stage.concept-changing .concept { animation: none; }
+  .concept__action { transition: none; }
+}
