@@ -6,6 +6,8 @@ import { setupAccordion } from './motion.js';
 import { setupScrollScenes } from './scroll-scenes.js';
 import { setupCardMotion } from './card-motion.js';
 import { setupPalettePreview } from './palette-preview.js';
+import { setupPlayground } from './playground.js';
+import { setupOrbitScene } from './orbit-scene.js';
 
 const systemMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const motionEvents = new EventTarget();
@@ -183,5 +185,7 @@ setupSculpture({ canvas: document.querySelector('.sculpture-canvas'), host: docu
 setupAccordion(motionPreference);
 setupScrollScenes(motionPreference, site.process.artStages);
 setupPalettePreview();
+setupPlayground(motionPreference);
+setupOrbitScene({ canvas: document.querySelector('.orbit-canvas'), host: document.querySelector('.demo-orbit'), motion: motionPreference });
 
 

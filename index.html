@@ -14,6 +14,7 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="./assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./src/fonts.css">
+  <link rel="stylesheet" href="./src/display-font.css">
   <link rel="stylesheet" href="./src/styles.css">
   <link rel="stylesheet" href="./src/concepts.css">
   <link rel="stylesheet" href="./src/experience.css">
@@ -23,6 +24,8 @@
   <link rel="stylesheet" href="./src/viewport.css">
   <link rel="stylesheet" href="./src/scroll-details.css">
   <link rel="stylesheet" href="./src/palette-preview.css">
+  <link rel="stylesheet" href="./src/playground.css">
+  <link rel="stylesheet" href="./src/orbit-scene.css">
 </head>
 <body id="top">
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -94,6 +97,26 @@
         </form>
         <div id="form-result" class="form-result" hidden tabindex="-1"><h3 id="result-title">Заявка готова к копированию.</h3><p id="result-description">Она ещё не отправлена. Скопируйте текст и передайте его по выбранному каналу связи после подключения контактов.</p><label for="inquiry-text" class="sr-only">Текст вашей заявки</label><textarea id="inquiry-text" rows="8" readonly spellcheck="false"></textarea><div class="result-actions"><button class="button button-dark" type="button" id="copy-inquiry"><span>Скопировать текст</span><svg class="arrow " width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></button><button type="button" class="text-button" id="edit-inquiry">Изменить данные</button></div><p class="copy-status" id="copy-status" role="status"></p></div>
       </div></div></section>
+    <section class="demo-playground" id="demo-playground" data-mood="expressive" aria-labelledby="playground-title">
+    <div class="demo-playground-inner">
+      <div class="demo-playground-heading"><h2 id="playground-title">Один смысл.<br><em>Разный характер.</em></h2><p>Один и тот же текст может звучать по-разному. Двигайте границу, меняйте настроение — найдите подачу, которая ближе вам.</p></div>
+      <div class="demo-moods" role="group" aria-label="Настроение демонстрации"><button class="demo-mood" type="button" data-demo-mood="expressive" aria-pressed="true"><span class="demo-mood-swatch swatch-expressive" aria-hidden="true"></span><span><strong>Выразительно</strong><small>Широкий шрифт · ультрафиолет</small></span><svg class="demo-mood-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg></button><button class="demo-mood" type="button" data-demo-mood="precise" aria-pressed="false"><span class="demo-mood-swatch swatch-precise" aria-hidden="true"></span><span><strong>Точно</strong><small>Чёткий шрифт · ледяной синий</small></span><svg class="demo-mood-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg></button><button class="demo-mood" type="button" data-demo-mood="warm" aria-pressed="false"><span class="demo-mood-swatch swatch-warm" aria-hidden="true"></span><span><strong>Тепло</strong><small>Живая антиква · шампань</small></span><svg class="demo-mood-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg></button></div>
+      <div class="demo-experiment">
+        <div class="demo-comparison-area"><div class="demo-comparison" style="--compare-split:52%">
+          <div class="demo-preview demo-preview-after"><div class="demo-preview-nav"><span>Анна · математика</span><span>Знакомство с предметом</span></div>
+    <div class="demo-preview-body"><h3>Математика,<br>которая становится<br><em>понятной.</em></h3><p class="demo-preview-copy">Разбираем сложное по шагам. Учимся замечать логику и находить свой путь к решению.</p><span class="demo-preview-action">Познакомиться <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span></div>
+    <span class="demo-preview-symbol" aria-hidden="true">x²</span><div class="demo-preview-foot"><span>В своём темпе</span><span>От вопроса — к пониманию</span></div></div>
+          <div class="demo-preview demo-preview-before" aria-hidden="true" inert><div class="demo-preview-nav"><span>Анна · математика</span><span>Знакомство с предметом</span></div>
+    <div class="demo-preview-body"><h3>Математика,<br>которая становится<br><em>понятной.</em></h3><p class="demo-preview-copy">Разбираем сложное по шагам. Учимся замечать логику и находить свой путь к решению.</p><span class="demo-preview-action">Познакомиться <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span></div>
+    <span class="demo-preview-symbol" aria-hidden="true">x²</span><div class="demo-preview-foot"><span>В своём темпе</span><span>От вопроса — к пониманию</span></div></div>
+          <div class="demo-compare-labels" aria-hidden="true"><span>До</span><span>После</span></div>
+          <span class="demo-divider" aria-hidden="true"><span class="demo-divider-grip"><svg viewBox="0 0 24 24"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></svg></span></span>
+        </div><div class="demo-comparison-controls"><label for="demo-comparison-range" id="demo-comparison-help">Потяните границу или ползунок ниже</label><output class="demo-comparison-value" for="demo-comparison-range" aria-live="off">До: 52%</output><input class="demo-range" id="demo-comparison-range" type="range" min="0" max="100" value="52" step="1" aria-label="Доля исходного оформления" aria-valuetext="Исходное оформление: 52 процентов" aria-describedby="demo-comparison-help"></div><p class="demo-example-note">Учебный пример для вымышленного преподавателя. Содержание в обоих вариантах одинаковое.</p></div>
+        <div class="demo-orbit-area"><div class="demo-orbit" aria-hidden="true"><canvas class="orbit-canvas" width="640" height="640"></canvas><svg class="orbit-fallback" viewBox="0 0 480 480" fill="none"><g transform="translate(240 240)" stroke="currentColor" stroke-width="24"><ellipse rx="155" ry="66" transform="rotate(-30)"/><ellipse rx="155" ry="66" transform="rotate(90)"/><ellipse rx="155" ry="66" transform="rotate(30)"/></g></svg></div><div class="demo-orbit-caption"><span class="demo-orbit-spark" aria-hidden="true"></span><p>Характер в движении<span>Свет и материал тоже подстраиваются под настроение.</span></p></div></div>
+      </div>
+      <div class="demo-playground-bottom"><p class="demo-mood-status" role="status" aria-live="polite">Выразительно. Шрифт Unbounded.</p><button class="demo-reset" type="button">Вернуть исходный вариант <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a8 8 0 1 1-1 7M5 4v5h5"/></svg></button></div>
+    </div>
+  </section>
   </main>
   <footer class="site-footer wrap"><div class="footer-top"><p>Профессиональная ценность. Видимая форма.</p><a class="text-link" href="#top">К началу<svg class="arrow up" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></a></div><div class="footer-wordmark" aria-hidden="true">ПРОЯВЛЕНО<i></i></div><div class="footer-bottom"><span>ПРОЯВЛЕНО</span><button class="motion-toggle" type="button" id="motion-toggle" aria-pressed="false">Меньше движения</button><span>Лендинги для частной практики</span></div></footer>
   <script type="module" src="./src/main.js"></script>

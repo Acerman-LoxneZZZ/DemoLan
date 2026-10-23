@@ -1,4 +1,5 @@
 import { renderConcept } from './concepts.js';
+import { renderPlayground } from './playground.js';
 
 const e = (value = '') => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const lines = value => e(value).replace(/\n/g, '<br>');
@@ -30,6 +31,7 @@ export function renderDocument(s) {
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="./assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./src/fonts.css">
+  <link rel="stylesheet" href="./src/display-font.css">
   <link rel="stylesheet" href="./src/styles.css">
   <link rel="stylesheet" href="./src/concepts.css">
   <link rel="stylesheet" href="./src/experience.css">
@@ -39,6 +41,8 @@ export function renderDocument(s) {
   <link rel="stylesheet" href="./src/viewport.css">
   <link rel="stylesheet" href="./src/scroll-details.css">
   <link rel="stylesheet" href="./src/palette-preview.css">
+  <link rel="stylesheet" href="./src/playground.css">
+  <link rel="stylesheet" href="./src/orbit-scene.css">
 </head>
 <body id="top">
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -91,6 +95,7 @@ export function renderDocument(s) {
         </form>
         <div id="form-result" class="form-result" hidden tabindex="-1"><h3 id="result-title">${e(s.form.resultTitle)}</h3><p id="result-description">${e(s.form.resultText)}</p><label for="inquiry-text" class="sr-only">${e(s.form.resultLabel)}</label><textarea id="inquiry-text" rows="8" readonly spellcheck="false"></textarea><div class="result-actions"><button class="button button-dark" type="button" id="copy-inquiry"><span>${e(s.form.copy)}</span>${arrow()}</button><button type="button" class="text-button" id="edit-inquiry">${e(s.form.edit)}</button></div><p class="copy-status" id="copy-status" role="status"></p></div>
       </div></div></section>
+    ${s.playground?.enabled === false ? '' : renderPlayground()}
   </main>
   <footer class="site-footer wrap"><div class="footer-top"><p>${e(s.footer.line)}</p><a class="text-link" href="#top">${e(s.footer.back)}${arrow('up')}</a></div><div class="footer-wordmark" aria-hidden="true">${e(s.brand)}<i></i></div><div class="footer-bottom"><span>${e(s.brand)}</span><button class="motion-toggle" type="button" id="motion-toggle" aria-pressed="false">${e(s.accessibility.motionReduce)}</button><span>${e(s.footer.note)}</span></div></footer>
   <script type="module" src="./src/main.js"></script>

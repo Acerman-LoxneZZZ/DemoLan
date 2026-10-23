@@ -4,7 +4,7 @@ import { buildRibbonMesh } from './ribbon-geometry.js';
 export function setupSculpture({ canvas, host, motion }) {
   const empty = { destroy() {} };
   if (!canvas || !host) return empty;
-  const interactionSurface = host.closest?.('.hero') || host;
+  const interactionSurface = host;
 
   const fallback = () => {
     canvas.hidden = true;
@@ -309,8 +309,8 @@ export function setupSculpture({ canvas, host, motion }) {
   function onPointer(event) {
     if (coarse || motion?.matches || event.pointerType === 'touch') return;
     const rect = interactionSurface.getBoundingClientRect();
-    targetX = Math.max(-1, Math.min(1, (event.clientX - rect.left) / rect.width * 2 - 1));
-    targetY = Math.max(-1, Math.min(1, (event.clientY - rect.top) / rect.height * 2 - 1));
+    targetX = clamp(((event.clientX - rect.left) / Math.max(1, rect.width) * 2 - 1) * 1.5, -1, 1);
+    targetY = clamp(((event.clientY - rect.top) / Math.max(1, rect.height) * 2 - 1) * 1.2, -1, 1);
     poseDirty = true;
     sync();
   }
@@ -426,8 +426,8 @@ export function getSculpturePose({ progress = 0, time = 0, x = 0, y = 0, reduced
   const intro = 1 - (1 - clamp(time / 3, 0, 1)) ** 3;
   return {
     progress: p,
-    yaw: clamp(-.40 + intro * .12 + eased * .50 + Math.sin(time * .25) * .045 + clamp(x, -1, 1) * .45, -.82, .82),
-    pitch: clamp(.18 - eased * .22 + Math.sin(time * .29) * .025 + clamp(y, -1, 1) * .26, -.40, .48),
+    yaw: clamp(-.40 + intro * .12 + eased * .50 + Math.sin(time * .25) * .045 + clamp(x, -1, 1) * .68, -.95, .95),
+    pitch: clamp(.18 - eased * .22 + Math.sin(time * .29) * .025 + clamp(y, -1, 1) * .38, -.55, .62),
     roll: -.34 + eased * .52 + Math.sin(time * .20) * .02,
     scale: 1.02 - eased * .14,
   };

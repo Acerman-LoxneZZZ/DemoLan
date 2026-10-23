@@ -12,6 +12,9 @@ await writeFile(join(root, 'index.html'), html);
 await writeFile(join(output, 'index.html'), html);
 await mkdir(join(output, 'src'), { recursive: true });
 await cp(join(root, 'src/scroll-details.css'), join(output, 'src/scroll-details.css'));
+for (const file of ['playground.js', 'playground.css', 'orbit-geometry.js', 'orbit-scene.js', 'orbit-scene.css']) {
+  await cp(join(root, 'src', file), join(output, 'src', file));
+}
 for (const file of ['config.js', 'main.js', 'inquiry.js', 'concepts.js', 'motion.js', 'scroll-scenes.js', 'sculpture.js', 'ribbon-geometry.js', 'card-motion.js', 'palette-preview.js', 'fonts.css', 'display-font.css', 'styles.css', 'concepts.css', 'experience.css', 'card-motion.css', 'identity.css', 'palette-tokens.css', 'viewport.css', 'palette-preview.css']) {
   await cp(join(root, 'src', file), join(output, 'src', file));
 }

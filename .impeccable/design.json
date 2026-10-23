@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T14:16:31.003Z",
+  "generatedAt": "2026-10-23T20:28:02.031Z",
   "title": "Design System: ПРОЯВЛЕНО",
   "extensions": {
     "colorMeta": {
@@ -359,7 +359,7 @@
   ],
   "narrative": {
     "northStar": "Рельеф экспертизы",
-    "overview": "Пользователь выбрал Ультрафиолет основной гаммой. Цвета заданы в HTML/CSS до JS, preview начинает с активного варианта. Основная поверхность использует Manrope вместо Unbounded; Cormorant остаётся в мини-концепте. FAQ850мс открытие/520мс закрытие и800–850мс знак. Компоновка окна V5 сохранена. Visual QA текущей доработки не выполнена из-за сохранённого browser origin deny.",
+    "overview": "Пользователь выбрал Ультрафиолет основной гаммой. Цвета заданы в HTML/CSS до JS, preview начинает с активного варианта. Основная поверхность использует Manrope вместо Unbounded; Cormorant остаётся в мини-концепте. FAQ850мс открытие/520мс закрытие и800–850мс знак. Компоновка окна V5 сохранена. Visual QA текущей доработки не выполнена из-за сохранённого browser origin deny.\n\nBottom-only demo playground: before/after with a native range and pointer capture; expressive Unbounded, precise Manrope and warm Cormorant variants are local to the section. New linked-ring WebGL scene has local lighting and bounded motion. Hero pointer interaction is now confined to its own host and stronger. Main checkpoint remains1a0cee2; feature branchcodex/demo-playground.",
     "keyCharacteristics": [
       "Чёрная сцена, электрический фиолетовый и лаймовый сигнал.",
       "Unbounded для характера, Manrope для чтения.",

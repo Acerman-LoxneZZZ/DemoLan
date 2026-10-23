@@ -203,7 +203,7 @@ test('desktop uses its 60 fps budget for a turn and returns to 45 fps idle', () 
     let before = env.drawCount;
     env.step(60);
     assert.ok(env.drawCount - before >= 44 && env.drawCount - before <= 46);
-    env.hero.emit('pointermove', { clientX: 740, clientY: 0, pointerType: 'mouse' });
+    env.host.emit('pointermove', { clientX: 740, clientY: 0, pointerType: 'mouse' });
     before = env.drawCount;
     env.step(60);
     assert.ok(env.drawCount - before >= 58 && env.drawCount - before <= 61);
@@ -268,4 +268,21 @@ test('a mobile scene at rest draws its new palette once and releases the frame',
     assert.deepEqual(env.uniform('uLight'), [.6, .35, 1]);
     assert.deepEqual(env.resources, resources);
   } finally { renderer?.destroy(); env.restore(); }
+});
+
+test('hero sculpture listens only near its own canvas and returns on leave', () => {
+  const env = rendererEnvironment({coarse:false}); let renderer;
+  try {
+    renderer=setupSculpture(env);
+    assert.equal(env.hero.listeners.get('pointermove')?.size || 0, 0);
+    assert.equal(env.host.listeners.get('pointermove')?.size, 1);
+    env.step(200);
+    const start=JSON.parse(env.host.dataset.pose);
+    env.host.emit('pointermove',{pointerType:'mouse',clientX:650,clientY:600});env.step(120);
+    const turned=JSON.parse(env.host.dataset.pose);
+    assert.ok(Math.abs(turned.yaw-start.yaw) > .45);
+    env.host.emit('pointerleave');env.step(120);
+    const returned=JSON.parse(env.host.dataset.pose);
+    assert.ok(Math.abs(returned.yaw-turned.yaw) > .45);
+  } finally {renderer?.destroy();env.restore();}
 });
